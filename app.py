@@ -19,7 +19,7 @@ s3_client = boto3.client(
     config=Config(signature_version="s3v4")
 )
 
-st.title("? Secure EV Data Portal")
+st.title("⚡ Secure EV Data Portal")
 st.write("Temporary Object Sharing Architecture")
 
 if st.button("Generate 5-Minute Access Link"):
@@ -28,7 +28,7 @@ if st.button("Generate 5-Minute Access Link"):
         Params={"Bucket": BUCKET_NAME, "Key": ALLOWED_FILE},
         ExpiresIn=300
     )
-    st.success("? Secure Link Generated Successfully!")
+    st.success("✅ Secure Link Generated Successfully!")
     st.code(url, language="text")
     st.subheader("Data Preview (Loaded via Secure Link)")
     try:
